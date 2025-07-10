@@ -4,40 +4,33 @@
 public class problem7 {
 
     public static void main(String[] args) {
-        int count = 50;
-        while (count > 1) {
-            count--;
-
+        int answer = 10;
+        int a = 4;
+        while (a <= 10001) {
+            answer++;
+            isprime(answer);
+            a++;
+            answer = isprime(answer);
         }
-        }
-
-    public static long prime() {
-
-        long num = 13;
-        int count = 0;
-        long answer = -1;
-    
-        for (int i = 7; i <= 10001; i++) {
-            boolean done = false;
-            if (num % 2 == 0) {
-                num++;
-            }
-            while (!done) {
-                    for (long k = num - 1; k > 1; k--) {
-                        if (num % k != 0) {
-                            count++;
-                            if (count == (num - 2)) {
-                                answer = num;
-                                done = true;
-                            }
-                        }
-                        else {
-                            num++;
-                        }
-                    }
-                }
-            }
-        return answer;
-        }
-
+        System.out.println(answer);
     }
+
+    public static int isprime(int y) {
+
+        int x = y;
+
+        if (x % 2 == 0) {
+            x++;
+        }
+
+        for (int i = 3; i < x; i++) {
+
+            if (x % i == 0) {
+                    x++;
+                }
+            
+            }
+
+        return x;
+    }    
+}
